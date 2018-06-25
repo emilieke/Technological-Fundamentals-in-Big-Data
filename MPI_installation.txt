@@ -1,0 +1,27 @@
+cd /home/100356077
+tar zxvf mpich-3.2.tar.gz 
+mkdir mpich-install-3.2 
+cd mpich-3.2 
+
+/home/100356077/mpich-3.2/configure --prefix=/home/100356077/mpich-install-3.2
+
+
+/Users/Emilie/mpich-3.2/configure --prefix=/Users/Emilie/mpich-install-3.2
+make
+make install 
+
+ssh-keygen
+
+ssh-copy-id pt1a502
+
+eval `ssh-agent`
+
+ssh-add ~/.ssh/id_dsa
+
+ssh pt1a502
+
+
+mpicc -o MPI_solution_1 MPI_solution_1.c
+
+mpirun -np 4 -host pt1a508,pt1a506 ./helloworld
+
